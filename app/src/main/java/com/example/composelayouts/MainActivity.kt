@@ -5,9 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
@@ -56,10 +60,39 @@ fun LayoutScreen(modifier: Modifier){
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement =  Arrangement.SpaceAround,
+            modifier= Modifier
+                .background(color= Color.Yellow)
+                .weight(1f)
+                .fillMaxWidth()
+        ) {
+            Text("texto 1")
+            Text("texto 2")
+            Text("texto 3")
+        }
 
-        Text("texto 1")
-        Text("texto 2")
-        Text("texto 3")
+
+
+        Row(
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.background(color = Color.Gray)
+                .weight(1f)
+                .fillMaxWidth(
+                )
+        ) {
+            Text("Texto 4")
+            Text("Texto 5")
+            Text("Texto 6")
+
+            Column() {
+                Text("Texto 7")
+                Text("Texto 8")
+                Text("Texto 9")
+            }
+        }
 
     }
 }
